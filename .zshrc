@@ -177,6 +177,13 @@ compile_VHDL(){
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
+# Function to compile verilog 
+
+compile_verilog(){
+	iverilog -o out.vvp $1
+	vvp out.vvp
+	gtkwave waveform.vcd &
+}
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
