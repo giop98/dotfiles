@@ -184,6 +184,16 @@ compile_verilog(){
 	vvp out.vvp
 	gtkwave waveform.vcd &
 }
+
+# Function to download youtube video or playlist in best quality with mp4 output format
+download_youtube(){
+	if [ "$#" -eq 2 ]
+	then
+		youtube-dl -f "bestvideo[height<=$1][ext=mp4]+bestaudio[ext=m4a]" $2
+	else
+		echo "First parameter height of the video (i.e 1080), second parameter url of the video/playlist"	
+	fi
+}
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
