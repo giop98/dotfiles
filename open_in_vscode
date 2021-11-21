@@ -1,0 +1,9 @@
+tell application "Finder"
+	set myWin to window 1
+	set thePath to (quoted form of POSIX path of (target of myWin as alias))
+	tell application "Terminal"
+		do script "code " & thePath
+		delay 1
+		quit
+	end tell
+end tell
